@@ -1,0 +1,352 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	min-width: 360px;
+}
+
+/*----- Colores-----
+color: #034AA6;
+color: #035AA6;
+color: #0477BF;
+color: #049DD9;
+color: #79D0F2;
+color: #F9F9F5;																							
+
+}*/
+
+@font-face{
+	font-family: 'Roboto-Bold';
+	src:url('../webfonts/Roboto-Bold.ttf');	
+}
+
+@font-face{
+	font-family: 'Roboto-Light';
+	src:url('../webfonts/Roboto-Light.ttf');
+}
+
+@font-face{
+	font-family: 'Roboto-Regular';
+	src:url('../webfonts/Roboto-Regular.ttf');
+}
+
+a{
+	outline: none;
+}
+
+.logo{
+	height: 50px;
+	width: auto;
+}
+
+.barnav{
+	background-color: rgb(3,101,140);
+}
+
+
+.titulos{
+	font-family: Roboto-Regular;
+	font-weight: bold;
+	color:rgb(3,101,140);
+
+}
+
+.cuerpos{
+	font-family: Roboto-Light;
+	color: rgb(3,165,191);
+}
+.subtitulos{
+	font-family: Roboto-Regular;
+	color:rgb(3,101,140);
+}
+
+.fa-user-circle{
+	font-size: 30px;
+}
+
+/* .active{
+	 text-decoration-line: underline;
+	 text-decoration-style: solid;
+} */
+
+/*.active-sub{
+	margin-bottom: 2px; 
+	border-bottom: white solid 2px;
+}
+
+.contenedor{
+	margin-top: 5%;
+}
+*/
+
+/*---Abre Usuario---*/
+.contenedor-index{
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+
+/*------index------*/
+.active-sub{
+	margin-bottom: 2px; 
+	border-bottom: white solid 2px;
+}
+
+.slogan{
+	margin-top: 8%;
+}
+
+.slogan h5{
+	margin-top: 5%;
+	text-align: center;
+}
+
+.slogan a{
+	margin-top: 20%;
+	padding: 18px 30px 18px 30px;
+	background-color: rgb(3,101,140);
+    border-radius: 35px;
+    font-family: Roboto-Bold;
+   	color: white;
+   	box-shadow: 0px 3px 4px 1px rgba(0,0,0,0.35);
+}
+
+.inicio-sesion{
+	width: 100%;
+	border-radius:35px;
+	padding: 20px 20px;
+	box-shadow: 0px 3px 4px 1px rgba(0,0,0,0.35);
+}
+
+.inicio-sesion legend{
+	margin: 10% 0 15% 0;
+	font-size: 2em;
+	font-family: Roboto-Bold;
+	color: rgb(3,101,140);
+
+}
+
+.inicio-sesion input{
+	border-radius: 10px ;
+	text-align: center;
+}
+
+.inicio-sesion button{
+	margin-top: 5%;
+	padding: 15px 30px 15px 30px; 
+	color: rgb(3,101,140);
+    border-radius: 35px ; 
+    font-family: Roboto-Bold;
+}
+
+@media (max-width: 767px) {
+    .inicio-sesion {
+        margin-top:20%;
+    }
+	.contenedor-index{
+		margin-top: 0px;
+	}
+}
+.contenedor-tipo-usuario{
+	margin-top:10%;
+	margin-bottom: 8%;
+
+}
+.modal-tipo-usuario{
+	margin-top: 5%;
+/*	border-radius: 35px;*/
+	width: 100%;
+	padding: 25px 25px;
+	box-shadow: 0px 3px 4px 1px rgba(0,0,0,0.35);
+}
+
+.modal-tipo-usuario a{
+	margin-top: 5%;
+	padding: 15px 30px 15px 30px; 
+	color: rgb(3,101,140);
+    border-radius: 35px ; 
+    font-family: Roboto-Bold;
+}
+
+.modal-tipo-usuario h1{
+	font-size: 2em;
+}
+
+.tu-footer{
+	margin-top: 2%;
+/*	border-radius: 35px;*/
+	width: 100%;
+	padding: 20px 20px;
+	box-shadow: 0px 3px 4px 1px rgba(0,0,0,0.35);	
+}
+.registro-sesion{
+	margin-top: 20%;
+	margin-bottom: 20%;
+	width: 100%;
+	border-radius:35px;
+	padding: 20px 20px;
+	/*box-shadow: 1px 6px 6px 0px rgba(0,0,0,0.35);*/
+	box-shadow: 0px 3px 4px 1px rgba(0,0,0,0.35);
+}
+
+.registro-sesion legend{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	text-align: center;
+	font-size: 2em;
+	/*font-family: Roboto-Bold;*/
+	font-family: Roboto-Regular;
+	color: rgb(3,101,140);
+}
+
+.registro-sesion input{
+	border-radius: 35px ;
+	text-align: center;
+}
+
+.registro-sesion button{
+	margin-top: 5%;
+	padding: 15px 30px 15px 30px; 
+	color: rgb(3,101,140);
+    border-radius: 35px ; 
+    font-family: Roboto-Bold;
+}
+
+.boton {
+	margin-top: 5%;
+	padding: 15px 30px 15px 30px; 
+	color: rgb(3,101,140);
+    border-radius: 35px ; 
+    font-family: Roboto-Bold;
+}
+
+
+/* .footer{
+  bottom: 0;
+  display: flex;
+  width:100%;
+  height: 80px;
+  background-color: #e9ecef;
+}
+footer.footer .copyright {
+  line-height: 1;
+  font-size: 0.8rem;
+} */
+/*----Abre Admin----*/
+
+.contenedor{
+	margin-top:5%;
+	margin-bottom:5%;
+}
+
+.fa-bars{
+	color: white;
+	font-size: 2em;
+	margin-right: 12px;
+	cursor:pointer;
+}
+
+/*----Registro Odontologo y paciente----*/
+
+.modal-registro{
+	margin:0 auto;
+	width: 100%;
+	border-radius:35px;
+	padding:4%;
+	font-size: 15px;
+	box-shadow: 0px 3px 4px 1px rgba(0,0,0,0.35);
+}
+.modal-registro input, .modal-registro select, .custom-file-input, .custom-file-label{
+	border-radius:10px;
+}
+
+.active-item{
+	background-color: rgb(3,165,191) ;
+	color: rgb(249,249,245);
+}
+
+.modal-registro legend{
+	font-size: 2em;
+	margin-bottom: 4%;
+}
+
+.modal-registro button{
+	color: rgb(3,101,140);
+    border-radius: 10px ; 
+    font-family: Roboto-Regular;
+}
+
+.modal-registro a{
+	color: rgb(3,101,140);
+    border-radius: 10px ; 
+    font-family: Roboto-Regular;
+}
+
+.botones{
+	background-color: transparent;
+	cursor:pointer;
+	outline:none;
+	border: none;
+}
+
+.acciones{
+	font-size: 25px;
+	color: rgb(3,101,140);
+}
+acronym{
+	text-decoration: none;
+}
+.modal-delete button{
+	color: rgb(3,101,140);
+    border-radius: 10px ; 
+    font-family: Roboto-Regular;
+}
+
+/*----Servicios----*/
+
+.main-section-servicio{
+	margin: 0 auto;
+	margin-top: 50%;
+	margin-bottom: 15%;
+	padding: 0;
+}
+
+.modal-content{
+	border-radius:35px;
+	box-shadow: 0px 3px 4px 1px rgba(0,0,0,0.35);
+}
+
+.user-img-servicio {
+	margin-top: -90px;
+	margin-bottom: 10px;
+	
+}
+
+
+.user-img-servicio img{
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+    box-shadow: 0px 0px 3px #848484;
+    background: rgba(255, 255, 255, 0.815);
+}
+
+.main-section-servicio h6{
+	margin:10px;
+}
+
+.content-servicios{
+	margin: 20px;
+}
+
+.content-servicios a{
+	margin-right: 10px;
+}
+.content-servicios button{
+	margin-left: 10px;
+}
+
+.modal-servicio{
+	width: 340px;
+}
