@@ -1,6 +1,6 @@
 <?php  
 	
-	require_once 'modelos/usuario_modelo.php';
+	require_once 'modelos/odontologo.php';
 	
 	class UsuarioControl
 	{

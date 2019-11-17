@@ -1,54 +1,49 @@
-<?php 
+<?php
+class Servicio{
 
-/**
- * 
- */
-class Odontologo
-{
-
-	/**
-	 * Método para obtener la lista de odontologos desde el WebService
+    /**
+	 * Método para obtener la lista de servicios desde el WebService
 	 * @return arreglo con objetos std_class
 	 */
-	public function listarOdontologosModelo(){
+	public function listarServiciosModelo(){
 
-		$listaOdontologosurl = "http://localhost/WEBSERVICES_REDDENTS/public/odontologos";
+		$listaServiciosurl = "http://localhost/PROYECTOREDDENTS/WEBSERVICES_REDDENTS/public/servicios";
 
-		$listaOdontologosjson = file_get_contents($listaOdontologosurl);
+		$listaServiciosjson = file_get_contents($listaServiciosurl);
 
-		$listaOdontologos = json_decode($listaOdontologosjson);
+		$listaServicios = json_decode($listaServiciosjson);
 
-		return $listaOdontologos;
+		return $listaServicios;
+		
 	}
-
 	/**
-	 * Método para obtener los datos de un odontologo desde el WebService
+	 * Método para obtener los datos de un servicio desde el WebService
 	 * @return arreglo con objetos std_class
 	 */
-	public function buscarOdontologoModelo($dato){
+	public function buscarPacientesModelo($dato){
 
-		$listaOdontologosurl = "http://localhost/PROYECTOREDDENTS/WEBSERVICES_REDDENTS/public/odontologos/".$dato;
+		$listaPacientesurl = "http://localhost/PROYECTOREDDENTS/WEBSERVICES_REDDENTS/public/Pacientes/".$dato;
 
-		$listaOdontologosjson = file_get_contents($listaOdontologosurl);
+		$listaPacientesjson = file_get_contents($listaPacientesurl);
 
-		$listaOdontologos = json_decode($listaOdontologosjson);
+		$listaPacientes = json_decode($listaPacientesjson);
 
-		return $listaOdontologos;
+		return $listaPacientes;
 	}
 
 
-	/**
-	 * Método para enviar a registrar un odontologo al WebService
+    /**
+	 * Método para enviar a registrar un servicio al WebService
 	 * @param array asociativo con los datos a registrar
 	 * @return boolean: true si se realizo el registro, false si no se pudo regiatrar en la BD
 	 */
-	public function registrarOdontologosModelo($datos){
+	public function registrarServiciosModelo($datos){
 
 		$datosJson = json_encode($datos);
 
 		$ch = curl_init();
 
-		curl_setopt($ch, CURLOPT_URL, "http://localhost/WEBSERVICES_REDDENTS/public/odontologos/nuevo");
+		curl_setopt($ch, CURLOPT_URL, "http://localhost/PROYECTOREDDENTS/public/servicios/nuevo");
 
 		curl_setopt($ch,CURLOPT_POST , TRUE);
 
@@ -67,18 +62,18 @@ class Odontologo
 	}
 
 	/**
-	 * Método para actualizar un odontologo al WebService
+	 * Método para actualizar un servicios al WebService
 	 * @param array asociativo con los datos a actualizar
 	 * @return boolean: true si se realizo la actualizacion, false si no se pudo actualizar en la BD
 	 */
 
-	public function actualizarOdontologosModelo($datos,$id){
+	public function actualizarServiciosModelo($datos,$id){
 
 		$datosJson = json_encode($datos);
 
 		$ch = curl_init();
 
-		curl_setopt($ch, CURLOPT_URL, "http://localhost/PROYECTOREDDENTS/WEBSERVICES_REDDENTS/public/odontologos/actualizar/".$id);
+		curl_setopt($ch, CURLOPT_URL, "http://localhost/PROYECTOREDDENTS/WEBSERVICES_REDDENTS/public/servicios/actualizar/".$id);
 
 		//curl_setopt($ch,CURLOPT_PUT , TRUE);
 		
@@ -98,18 +93,18 @@ class Odontologo
 	}
 
 	/**
-	 * Método para eliminar un odontologo al WebService
+	 * Método para eliminar un servicio al WebService
 	 * @param array 
 	 * @return boolean: 
 	 */
 	
-	public function eliminarOdontologosModelo($id){
+	public function eliminarServiciosModelo($id){
 
 		$datosJson = json_encode($id);
 
 		$ch = curl_init();
 
-		curl_setopt($ch, CURLOPT_URL, "http://localhost/PROYECTO_REDDENTS/WEBSERVICES_REDDENTS/public/odontologo/eliminar/".$id);
+		curl_setopt($ch, CURLOPT_URL, "http://localhost/PROYECTOREDDENTS/WEBSERVICES_REDDENTS/public/servicios/eliminar/".$id);
 		//curl_setopt($ch,CURLOPT_PUT , TRUE);
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE',);
 		curl_setopt($ch,CURLOPT_POSTFIELDS , $datosJson);
@@ -121,7 +116,8 @@ class Odontologo
 		return $resultado;
 	}
 
+    
+
+
 }
-
-
- ?>
+?>

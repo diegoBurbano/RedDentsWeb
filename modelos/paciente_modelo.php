@@ -1,54 +1,49 @@
-<?php 
+<?php
 
-/**
- * 
- */
-class Odontologo
-{
-
-	/**
-	 * Método para obtener la lista de odontologos desde el WebService
+class Paciente{
+    
+    /**
+	 * Método para obtener la lista de Pacientes desde el WebService
 	 * @return arreglo con objetos std_class
 	 */
-	public function listarOdontologosModelo(){
+	public function listarPacientesModelo(){
 
-		$listaOdontologosurl = "http://localhost/WEBSERVICES_REDDENTS/public/odontologos";
+		$listaPacientesurl = "http://localhost/PROYECTOREDDENTS/WEBSERVICES_REDDENTS/public/pacientes";
 
-		$listaOdontologosjson = file_get_contents($listaOdontologosurl);
+		$listaPacientesjson = file_get_contents($listaPacientesurl);
 
-		$listaOdontologos = json_decode($listaOdontologosjson);
+		$listaPacientes = json_decode($listaPacientesjson);
 
-		return $listaOdontologos;
+		return $listaPacientes;
 	}
-
+	
 	/**
-	 * Método para obtener los datos de un odontologo desde el WebService
+	 * Método para obtener los datos de un paciente desde el WebService
 	 * @return arreglo con objetos std_class
 	 */
-	public function buscarOdontologoModelo($dato){
+	public function buscarPacientesModelo($dato){
 
-		$listaOdontologosurl = "http://localhost/PROYECTOREDDENTS/WEBSERVICES_REDDENTS/public/odontologos/".$dato;
+		$listaPacientesurl = "http://localhost/PROYECTOREDDENTS/WEBSERVICES_REDDENTS/public/Pacientes/".$dato;
 
-		$listaOdontologosjson = file_get_contents($listaOdontologosurl);
+		$listaPacientesjson = file_get_contents($listaPacientesurl);
 
-		$listaOdontologos = json_decode($listaOdontologosjson);
+		$listaPacientes = json_decode($listaPacientesjson);
 
-		return $listaOdontologos;
+		return $listaPacientes;
 	}
-
-
-	/**
+    
+    /**
 	 * Método para enviar a registrar un odontologo al WebService
 	 * @param array asociativo con los datos a registrar
 	 * @return boolean: true si se realizo el registro, false si no se pudo regiatrar en la BD
 	 */
-	public function registrarOdontologosModelo($datos){
+	public function registrarPacientesModelo($datos){
 
 		$datosJson = json_encode($datos);
 
 		$ch = curl_init();
 
-		curl_setopt($ch, CURLOPT_URL, "http://localhost/WEBSERVICES_REDDENTS/public/odontologos/nuevo");
+		curl_setopt($ch, CURLOPT_URL, "http://localhost/PROYECTOREDDENTS/WEBSERVICES_REDDENTS/public/pacientes/nuevo");
 
 		curl_setopt($ch,CURLOPT_POST , TRUE);
 
@@ -68,19 +63,17 @@ class Odontologo
 
 	/**
 	 * Método para actualizar un odontologo al WebService
-	 * @param array asociativo con los datos a actualizar
+	 * @param array recibe un array asociativo y un id con el registro actualizar
 	 * @return boolean: true si se realizo la actualizacion, false si no se pudo actualizar en la BD
 	 */
 
-	public function actualizarOdontologosModelo($datos,$id){
+	public function actualizarPacientesModelo($datos,$id){
 
 		$datosJson = json_encode($datos);
 
 		$ch = curl_init();
 
-		curl_setopt($ch, CURLOPT_URL, "http://localhost/PROYECTOREDDENTS/WEBSERVICES_REDDENTS/public/odontologos/actualizar/".$id);
-
-		//curl_setopt($ch,CURLOPT_PUT , TRUE);
+		curl_setopt($ch, CURLOPT_URL, "http://localhost/PROYECTOREDDENTS/WEBSERVICES_REDDENTS/public/pacientes/actualizar/".$id);
 		
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT',);
 		
@@ -99,18 +92,17 @@ class Odontologo
 
 	/**
 	 * Método para eliminar un odontologo al WebService
-	 * @param array 
+	 * @param mixed $id recibe el id de registro a eliminar
 	 * @return boolean: 
 	 */
 	
-	public function eliminarOdontologosModelo($id){
+	public function eliminarPacientesModelo($id){
 
 		$datosJson = json_encode($id);
 
 		$ch = curl_init();
 
-		curl_setopt($ch, CURLOPT_URL, "http://localhost/PROYECTO_REDDENTS/WEBSERVICES_REDDENTS/public/odontologo/eliminar/".$id);
-		//curl_setopt($ch,CURLOPT_PUT , TRUE);
+		curl_setopt($ch, CURLOPT_URL, "http://localhost/PROYECTOREDDENTS/WEBSERVICES_REDDENTS/public/paciente/eliminar/".$id);
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE',);
 		curl_setopt($ch,CURLOPT_POSTFIELDS , $datosJson);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
@@ -120,8 +112,8 @@ class Odontologo
 
 		return $resultado;
 	}
-
 }
 
 
- ?>
+
+?>

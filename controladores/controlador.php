@@ -6,6 +6,8 @@
 
 	class Controlador
 	{
+		
+
 	    /**
 	     * Método para imprimir la plantilla en pantalla
 	     */
@@ -266,7 +268,10 @@
 			session_destroy();
 			// header("Location: index.php");
 			echo "<script>location.href='index.php';</script>";
-	    }
+		}
+
+		
+		
 
 
 
